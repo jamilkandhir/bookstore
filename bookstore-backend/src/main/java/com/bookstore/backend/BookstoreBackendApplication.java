@@ -2,8 +2,14 @@ package com.bookstore.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
+@ComponentScan("com.bookstore.backend")
+@EnableJpaRepositories("com.bookstore.backend.repository")
+@EntityScan("com.bookstore.backend.entities")
 public class BookstoreBackendApplication {
 
 	public static void main(String[] args) {
