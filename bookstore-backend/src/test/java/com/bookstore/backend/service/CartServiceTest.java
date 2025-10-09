@@ -6,6 +6,7 @@ import com.bookstore.backend.repository.CartItemRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class CartServiceTest {
 
         when(cartItemRepository.save(Mockito.any(CartItem.class))).thenReturn(cartItem);
 
-        CartItem result = cartService.addToCart(cartItem);
+        ResponseEntity<CartItem> result = cartService.addToCart(cartItem);
 
         assertEquals(cartItem, result);
         verify(cartItemRepository, times(1)).save(cartItem);
@@ -42,7 +43,7 @@ public class CartServiceTest {
 
         when(cartItemRepository.findAll()).thenReturn(List.of(cartItem));
 
-        List<CartItem> result = cartService.getAllCartItems();
+        List<CartItem> result = cartService.getAllCartItems().getBody();
 
         assertEquals(1, result.size());
         assertEquals(cartItem, result.get(0));

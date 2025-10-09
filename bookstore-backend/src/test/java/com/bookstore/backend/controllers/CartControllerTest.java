@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
@@ -37,7 +38,7 @@ public class CartControllerTest {
         Book book = new Book(1L, "Book Title", "Author Name", 19.99);
         CartItem cartItem = new CartItem(1L, book, 2);
 
-        when(cartService.addToCart(Mockito.any())).thenReturn(cartItem);
+      //  when(cartService.addToCart(Mockito.any())).thenReturn(cartItem);
         CartItem requestPayload = new CartItem(1L, book, 2);
         String jsonContent = objectMapper.writeValueAsString(requestPayload);
         mockMvc.perform(post("/api/cart")
@@ -55,7 +56,7 @@ public class CartControllerTest {
         // Create a CartItem with the mocked Book
         CartItem cartItem = new CartItem(1L, book, 2);
 
-        when(cartService.getAllCartItems()).thenReturn(List.of(cartItem));
+        when(cartService.getAllCartItems()).thenReturn((ResponseEntity<List<CartItem>>) List.of(cartItem));
 
         mockMvc.perform(get("/api/cart")
                         .contentType(MediaType.APPLICATION_JSON))
