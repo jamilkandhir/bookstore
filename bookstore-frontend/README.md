@@ -1,16 +1,26 @@
-# React + Vite
+# Bookstore Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend of the Bookstore application, built using **React** and **Vite**. It provides a user interface for managing a bookstore, including features like viewing cart items, adding items to the cart, and proceeding to checkout.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**: A JavaScript library for building user interfaces.
+- **Vite**: A fast development build tool for modern web projects.
+- **Axios**: For making HTTP requests to the backend API.
+- **React Router**: For handling client-side routing.
+- **JWT Authentication**: Static token-based authentication for API requests.
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Prerequisites
 
-## Expanding the ESLint configuration
+- **Node.js** (v16 or higher)
+- **npm** (v8 or higher)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Installation
+
+1-Install dependencies:  <pre>npm install </pre>
+2-Start the development server:  <pre>npm run dev </pre>
+3-Open the application in your browser at http://localhost:5173.
+   
+
+   
